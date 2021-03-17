@@ -4,6 +4,7 @@ const http = require("http");
 const app = express();
 const socketio = require("socket.io");
 const formatMessage = require("./helpers/messages");
+require("dotenv").config();
 const {
   userJoin,
   getCurrentUser,
@@ -13,7 +14,7 @@ const {
 const { constants } = require("fs");
 
 // var
-const PORT = 3000 || process.env.PORT;
+const PORT = process.env.PORT;
 const server = http.createServer(app);
 const io = socketio(server);
 
